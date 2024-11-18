@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Blog;
 use App\Models\Settings;
 use App\Models\Tracking;
 use Illuminate\Http\Request;
@@ -23,6 +24,7 @@ class ShipmentController extends Controller
         }
         return view('users.track')
         ->with('settings', Settings::first())
+        ->with('blogs', Blog::latest()->get())
         ->with('tracking', $code);
    
         return back();
