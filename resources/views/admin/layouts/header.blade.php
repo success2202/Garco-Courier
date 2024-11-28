@@ -2,10 +2,14 @@
     <div class="header-left">
       <a href="#" class="burger-menu"><i data-feather="menu"></i></a>
 
+<form action="{{ route('admin.SearchShipment') }}" method="get">
+  @csrf
       <div class="header-search">
-        <i data-feather="search"></i>
-        <input type="search" class="form-control" placeholder="What are you looking for?">
+       
+        <input type="text" name="SearchID" class="form-control" placeholder="What are you looking for?">
+       <button type="submit" style="border: 0px">  <i data-feather="search"></i></button>
       </div><!-- header-search -->
+    </form>
     </div><!-- header-left -->
 
     <div class="header-right">

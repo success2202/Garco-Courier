@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Models\Settings;
 use App\Models\Testimonials;
 use Illuminate\Http\Request;
+use App\Models\CourierDetails;
 use Illuminate\Support\Facades\Session;
 
 class SettingsController extends Controller
@@ -170,4 +171,7 @@ class SettingsController extends Controller
 
       }
     }
+
+
+   
 }

@@ -32,7 +32,7 @@
                        <a href="{{ route('users.service.details', encrypt($service->id)) }}"> <img alt="" src="{{asset('images/'.$service->images)}}"> </a>
                     </div>
                     <h2><a class="text-decoration-none" href="{{ route('users.service.details', encrypt($service->id)) }}">{{ $service->title }}</a></h2>
-                    <div class="text"> {{ $service->contents }} </div>
+                    <div class="text"> {!! $service->contents !!} </div>
                     <a href="{{ route('users.service.details', encrypt($service->id)) }}" class="read-more">Read more</a>
                 </div>
             </div>

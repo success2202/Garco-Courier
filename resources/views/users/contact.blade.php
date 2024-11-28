@@ -29,10 +29,11 @@
                 <div class="text">We Value Your Feedback Comments & Queries</div>
             </div>
             <!-- Form-->
-            <form method="post" action="https://nauthemes.net/html/carga/contact.html">
+            <form method="post" action="{{ route('contact-us') }}">
+                @csrf
                 <div class="row clearfix">
                     <div class="form-group col-lg-4 col-md-6 col-sm-12">
-                        <input type="text" name="firstname" placeholder="Enter Your Name" required>
+                        <input type="text" name="name" placeholder="Enter Your Name" required>
                     </div>
                     
                     <div class="form-group col-lg-4 col-md-6 col-sm-12">
@@ -43,7 +44,7 @@
                         <input type="text" name="phone" placeholder="Your Contact" required>
                     </div>
                     <div class="form-group col-lg-12 col-md-12 col-sm-12 col-lg-12">
-                        <textarea placeholder="Your Message"></textarea>
+                        <textarea name="content" placeholder="Your Message"></textarea>
                     </div>
                     <div class="form-group col-lg-6 col-md-6 col-sm-12">
                         <button type="submit" class="theme-btn btn-style-one">Request a Quote / Give Feedback</button>
@@ -54,7 +55,7 @@
     </div>
 </section>
 <!-- End contact Section -->
-<section class="fullwidth-section">
+{{-- <section class="fullwidth-section">
     <div class="outer-container">
         <div class="clearfix">
             
@@ -72,12 +73,12 @@
                 <div class="inner-column">
                     <h3>Are You A Shipper?</h3>
                     <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</div>
-                    <a href="#" class="theme-btn btn-style-two">Contact us</a>
+                    <a href="{{ route('users.contact') }}" class="theme-btn btn-style-two">Contact us</a>
                 </div>
             </div>
             
         </div>
     </div>
-</section>
+</section> --}}
 
 @endsection

@@ -16,11 +16,11 @@
                                 <div class="row clearfix">
                                     <div class="column col-lg-6 col-md-6 col-sm-12">
                                         <ul class="footer-list">
-                                            <li><a href="{{ route('users.about') }}">About us</a></li>
-                                            <li><a href="{{ route('users.services') }}">Services</a></li>
-                                            <li><a href="{{ route('users.blogs') }}">Latest blogs</a></li>
-                                            <li><a href="{{ route('users.track') }}">Track & trace</a></li>
-                                            <li><a href="{{ route('users.contact') }}">Contact us</a></li>
+                                            <li><a class="text-decoration-none" href="{{ route('users.about') }}">About us</a></li>
+                                            <li><a class="text-decoration-none" href="{{ route('users.services') }}">Services</a></li>
+                                            <li><a class="text-decoration-none" href="{{ route('users.blogs') }}">Latest blogs</a></li>
+                                            <li><a class="text-decoration-none" href="{{ route('users.track') }}">Track & trace</a></li>
+                                            <li><a class="text-decoration-none" href="{{ route('users.contact') }}">Contact us</a></li>
                                            
                                         </ul>
                                     </div>
@@ -49,9 +49,9 @@
                                 <div class="news-widget-block">
                                     <div class="widget-inner">
                                         <div class="image">
-                                           <a href="{{route('users.blog.details', encrypt($blog->id))}}"> <img src="{{asset('images/'.$blog->image)}}" alt="" /></a>
+                                           <a class="text-decoration-none" href="{{route('users.blog.details', encrypt($blog->id))}}"> <img src="{{asset('images/'.$blog->image)}}" alt="" /></a>
                                         </div>
-                                        <h3><a cla href="{{route('users.blog.details', encrypt($blog->id))}}">{{ $blog->contents }}</a></h3>
+                                        <h3><a class="text-decoration-none" href="{{route('users.blog.details', encrypt($blog->id))}}">{!! $blog->contents !!}</a></h3>
                                         <div class="post-date">{{ $blog->created_at }}</div>
                                     </div>
                                 </div>
@@ -95,13 +95,13 @@
                                 </div>
                                 <div class="text wid-notice">(No Spam, We Respect Your Privacy)</div>
                             </div>
-                        </div>
+                        </div>  
                         
                         <!--Footer Column-->
                         <div class="footer-column col-lg-6 col-md-6 col-sm-12">
                             <div class="footer-widget about-widget">
                                 <h2><span class="icon fa fa-user"></span>About Us</h2>
-                                <div class="text">{{ $settings->about }}</div>
+                                <div class="text">{!! $settings->about !!}</div>
                                 <div class="phone-number">{{ $settings->site_phone }}</div>
                                 <div class="about-email">{{ $settings->site_email }}</div>
                                 <!--Social Box-->

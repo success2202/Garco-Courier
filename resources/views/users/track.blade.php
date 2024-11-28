@@ -1,6 +1,71 @@
 @extends('layouts.base')
 @section('content')
+@push('styles')
+<style>
+    .progress-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 20px 0;
+        position: relative;
+    }
 
+    .progress-container::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: #ddd;
+        z-index: 1;
+        transform: translateY(-50%);
+    }
+
+    .step {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+    }
+
+    .step .circle {
+        width: 30px;
+        height: 30px;
+        background: #ddd;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 14px;
+        font-weight: bold;
+        color: #fff;
+        margin: 0 auto;
+    }
+
+    .step.active .circle {
+        background: #28a745;
+    }
+
+    .step.onhold .circle {
+        background: red;
+        
+    }
+
+    .step .label {
+        margin-top: 8px;
+        font-size: 14px;
+        color: #666;
+    }
+
+    .step.active .label {
+        color: #28a745;
+    }
+
+    .step.onhold .label {
+        color: #28a745;
+    }
+</style>
+@endpush
 <!--Page Title-->
 <section class="page-title" style="background-image:url({{ asset('assets/images/background/12.jpg') }});">
     <div class="auto-container">
@@ -37,7 +102,7 @@
                     <!-- Quote Form Box -->
                     <div class="quote-form-box">
                         <!--Login Form-->
-                        <form method="post" action="https://nauthemes.net/html/carga/contact.html">
+                        <form method="post" action="">
                             <div class="row clearfix">
                                 
                                 <!-- Form Group -->
@@ -73,128 +138,131 @@
                         </form>
                     </div>
                     
-                    <!-- Tracking Info -->
-                    @if (isset($tracking))
+
+                     <!-- Tracking Info -->
+                     @if (isset($tracking))
+
+                     <div class="theme-container container ">                   
+
+                    
+                        <div class="position-absolute top-0 end-0 p-3" style="z-index: 11">
+                            <div id="successToast" class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+                                <div class="d-flex">
+                                    <div class="toast-body">
+                                        Successfully Retrieved!
+                                    </div>
+                                    <button type="button" class="btn-close  me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                                </div>
+                            </div>
+                        </div>
+                        
+
+ 
+                </div>
+
+                    <div class="container">
+                        {{-- <h2 class="text-center">Shipping Progress</h2> --}}
+                        <div class="progress-container">
+
+                            @if($tracking->status == 'CREATED')
+                            <div class="step active">
+                                <div class="circle">1</div>
+                                <div class="label">Order Placed</div>
+                            </div>
+
+                            <div class="step">
+                                <div class="circle">2</div>
+                                <div class="label">Shipped</div>
+                            </div>
+                            <div class="step">
+                                <div class="circle">3</div>
+                                <div class="label">In Transit</div>
+                            </div>
+
+                            <div class="step">
+                                <div class="circle">4</div>
+                                <div class="label">Delivered</div>
+                            </div>
+
+                            @elseif($tracking->status == 'SHIPPED')
+                            <div class="step active">
+                                <div class="circle">1</div>
+                                <div class="label">Order Placed</div>
+                            </div>
+
+                            <div class="step active">
+                                <div class="circle">2</div>
+                                <div class="label">Shipped</div>
+                            </div>
+                            <div class="step">
+                                <div class="circle">3</div>
+                                <div class="label">In Transit</div>
+                            </div>
+
+                            <div class="step">
+                                <div class="circle">4</div>
+                                <div class="label">Delivered</div>
+                            </div>
+
+                            @elseif($tracking->status == 'IN_TRANSIT')
+                            <div class="step active">
+                                <div class="circle">1</div>
+                                <div class="label">Order Placed</div>
+                            </div>
+
+                            <div class="step active">
+                                <div class="circle">2</div>
+                                <div class="label">Shipped</div>
+                            </div>
+                            <div class="step active">
+                                <div class="circle">3</div>
+                                <div class="label">In Transit</div>
+                            </div>
+
+                            <div class="step">
+                                <div class="circle">4</div>
+                                <div class="label">Delivered</div>
+                            </div>
+
+                            @elseif($tracking->status == 'ON_HOLD')
+                            <div class="step active">
+                                <div class="circle">1</div>
+                                <div class="label">Order Placed</div>
+                            </div>
+
+                            <div class="step active">
+                                <div class="circle">2</div>
+                                <div class="label">Shipped</div>
+                            </div>
+                            <div class="step active">
+                                <div class="circle">3</div>
+                                <div class="label">In Transit</div>
+                            </div>
+
+                            <div class="step onhold">
+                                <div class="circle">4</div>
+                                <div class="label">Onhold</div>
+                            </div>
+                            <div class="step">
+                                <div class="circle">5</div>
+                                <div class="label">Delivered</div>
+                            </div>
+
+                           @endif
+                        </div>
+                    </div>
+
+
+                   
                         
                     
                 </article>
                     <section class="pt-50 pb-120 tracking-wrap">    
-                        <div class="theme-container container ">                   
-
-                    
-                            <div class="position-fixed top-0 end-0 p-3" style="z-index: 11">
-                                <div id="successToast" class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
-                                    <div class="d-flex">
-                                        <div class="toast-body">
-                                            Successfully Retrieved!
-                                        </div>
-                                        <button type="button" class="btn-close  me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            
-                       
-                    </div>
+                     
                     <div style="margin:20px; 0px 40px 0px">
                     <div class="progress-wrap">
                         
-                    <div class="container my-5">
-                        <div class="progress" style="height: 30px;">
-                            @if($tracking->status == 'CREATED')
-                            <div class="progress-bar progress-bar-striped bg-secondary" role="progressbar" style="width: 20%; text-align:center" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-                                Order Placed
-                            </div>
-                            <div class="progress-bar"  role="progressbar" style="width: 20%; text-align:center; background-color:#eee4e4" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-                            </div>
-                            <div class="progress-bar"  role="progressbar" style="width: 20%; text-align:center; background-color:#eee4e4" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-                            </div>
-                            <div class="progress-bar"  role="progressbar" style="width: 20%; text-align:center; background-color:#eee4e4" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-                            </div>
-                            <div class="progress-bar"  role="progressbar" style="width: 20%; text-align:center; background-color:#eee4e4" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-                             </div>
-
-                             @elseif($tracking->status == 'IN_PROCESS') 
-                             <div class="progress-bar progress-bar-striped bg-primary" role="progressbar" style="width: 20%; text-align:center" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-                                 Order Placed
-                             </div>
-                             <div class="progress-bar progress-bar-striped bg-secondary" role="progressbar" style="width: 30%; text-align:center" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-                                 Processing
-                             </div>
-                             <div class="progress-bar"  role="progressbar" style="width: 20%; text-align:center; background-color:#eee4e4" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-                            </div>
-                             <div class="progress-bar"  role="progressbar" style="width: 20%; text-align:center; background-color:#eee4e4" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-                             </div>
-                             <div class="progress-bar"  role="progressbar" style="width: 20%; text-align:center; background-color:#eee4e4" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-                                
-                             </div>
-
-
-                            @elseif($tracking->status == 'SHIPPED') 
-                            <div class="progress-bar progress-bar-striped bg-primary" role="progressbar" style="width: 20%; text-align:center" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-                                Order Placed
-                            </div>
-                            <div class="progress-bar progress-bar-striped bg-primary" role="progressbar" style="width: 30%; text-align:center" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-                                Processing
-                            </div>
-                            <div class="progress-bar progress-bar-striped bg-secondary" role="progressbar" style="width: 20%; text-align:center" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-                                Shipped
-                            </div>
-                            <div class="progress-bar"  role="progressbar" style="width: 20%; text-align:center; background-color:#eee4e4" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-                               
-                            </div>
-                            <div class="progress-bar"  role="progressbar" style="width: 20%; text-align:center; background-color:#eee4e4" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-                               
-                            </div>
-                            @elseif($tracking->status == 'IN_TRANSIT') 
-                            <div class="progress-bar progress-bar-striped bg-primary" role="progressbar" style="width: 20%; text-align:center" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-                                Order Placed
-                            </div>
-                            <div class="progress-bar progress-bar-striped bg-primary" role="progressbar" style="width: 30%; text-align:center" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-                                Processing
-                            </div>
-                            <div class="progress-bar progress-bar-striped bg-primary" role="progressbar" style="width: 20%; text-align:center" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-                                Shipped
-                            </div>
-                            <div class="progress-bar progress-bar-striped bg-secondary" role="progressbar" style="width: 20%; text-align:center" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-                                In Transit
-                            </div>
-                            <div class="progress-bar"  role="progressbar" style="width: 20%; text-align:center; background-color:#eee4e4" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-                               
-                            </div>
-                                @elseif($tracking->status == 'ON_HOLD') 
-                                    <div class="progress-bar progress-bar-striped bg-primary" role="progressbar" style="width: 20%; text-align:center" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-                                        Order Placed
-                                    </div>
-                                    <div class="progress-bar progress-bar-striped bg-primary" role="progressbar" style="width: 30%; text-align:center" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-                                        Processing
-                                    </div>
-                                    <div class="progress-bar progress-bar-striped bg-primary" role="progressbar" style="width: 20%; text-align:center" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-                                        Shipped
-                                    </div>
-                                    <div class="progress-bar progress-bar-striped bg-primary" role="progressbar" style="width: 20%; text-align:center" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-                                        In Transit
-                                    </div>
-                                    <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 20%; text-align:center" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-                                        On Hold
-                                    </div>
-                                    <div class="progress-bar"  role="progressbar" style="width: 20%; text-align:center; background-color:#eee4e4" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-                                       
-                                    </div>
-                                @endif
-                        </div>
-                        <div class="d-flex justify-content-between">
-                            <span>Order Placed</span>
-                            <span>Processing</span>
-                            <span>Shipped</span>
-                            <span>In Transit</span>
-                            @if ($tracking->status == "ON_HOLD")
-                                <span>On Hold</span> 
-                            @endif
-                           
-                            <span>Delivered</span>
-                        </div>
-                    </div>
+                  
 
                         <div class="row progress-content upper-text">
                             <div class="col-md-2 col-xs-8 col-sm-2">
@@ -295,7 +363,7 @@
                                     @elseif($tracking->status == 'SHIPPED') <span class=" bg-info p-1">SHIPPED  </span>
                                     @elseif($tracking->status == 'IN_TRANSIT') <span class=" bg-secondary p-1">IN TRANSIT  </span>
                                     @elseif($tracking->status == 'IN_PROCESS') <span class=" bg-info p-1">ON PROCESS  </span>
-                                    @elseif($tracking->status == 'ON_HOLD') <span class=" bg-danger p-1">ON HOLD  </span>
+                                    @elseif($tracking->status == 'ON_HOLD') <span class=" bg-danger p-1">Onhold  </span>
                                     @elseif($tracking->status == 'CANCELLED') <span class=" bg-danger p-1">CANCELLED  </span>@endif </td>
                                     <td>{{$tracking->courier->origin}} </td>
                                     <td>{{$tracking->courier->destination}} </td>

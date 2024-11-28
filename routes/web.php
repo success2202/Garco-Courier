@@ -68,6 +68,7 @@ Route::group(['prefix' => 'manage', 'as' => 'admin.'], function(){
         Route::post('/settings/update/settings', 'UpdateSettings')->name('settings.updateSettings');
         Route::get('/admin/user', 'UserAccount')->name('userAccount');
         Route::post('/admin/uuser/account', 'UpdateAccount')->name('UpdateAccount');
+       
     });
 
     Route::controller(AdminShippingController::class)->group(function () {
@@ -87,6 +88,9 @@ Route::group(['prefix' => 'manage', 'as' => 'admin.'], function(){
         Route::get('/courier/tracking/details/{id}', 'TrackingDetails')->name('courier.tracking.details');
         // Route::get('/courier/tracking/edit/{id}', 'TrackingEdit')->name('courier.tracking.edit');
         Route::post('/courier/tracking/update/{id}', 'UpdateTracking')->name('tracking.update');
+
+         //seaching shipment information
+         Route::get('/search', 'Search')->name('SearchShipment');
     
         
     
@@ -105,6 +109,7 @@ Route::controller(HomepageController::class)->group(function ()
     Route::post('/contact/form', 'ContactForm')->name('contact-us');
     Route::get('/fleet', 'Fleet')->name('users.fleet');
     Route::get('/testimonials', 'Testimonials')->name('users.testimonials');
+    Route::get('/quick-quote', 'QuickQuote')->name('users.quote');
     Route::get('/tracking', 'Track')->name('users.track');
 });
 

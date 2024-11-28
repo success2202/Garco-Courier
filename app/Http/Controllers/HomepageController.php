@@ -5,8 +5,12 @@ namespace App\Http\Controllers;
 use App\Models\Blog;
 use App\Models\Services;
 use App\Models\Settings;
+use App\Models\ContactUs;
+use App\Mail\ContactUsMail;
 use App\Models\Testimonials;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Session;
 
 class HomepageController extends Controller
 {
@@ -26,6 +30,22 @@ class HomepageController extends Controller
         ->with('blogs', Blog::latest()->get())
         ->with('settings', Settings::first());
     }
+
+    public function ContactForm(Request $request)
+    {
+        $contact = ContactUs::latest()->first();
+        $data = [
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'content' => $request->content,
+            'name' => $request->name,
+        ];
+        // $contact = ContactUs::create($data);
+        Mail::to($contact->email)->send(new ContactUsMail($data));
+        Session::flash('message', 'Message sent succesfully');
+        return back();
+    }
+    
 
     public function AboutUs()
     {
@@ -70,6 +90,7 @@ class HomepageController extends Controller
     public function Fleet()
     {
         return view('users.fleet')
+        ->with('blogs', Blog::latest()->get())
         ->with('settings', Settings::first());
     }
 
@@ -86,6 +107,13 @@ class HomepageController extends Controller
         return view('users.track')
         ->with('blogs', Blog::latest()->get())
         ->with('settings', Settings::first());
+    }
+
+    public function QuickQuote()
+    {
+        return view('users.quote')
+        ->with('settings', Settings::first())
+        ->with('blogs', Blog::latest()->get());
     }
 }
 

@@ -175,8 +175,8 @@
 							<a href="{{ route('users.service.details', encrypt($service->id)) }}"><img alt="" src="{{asset('images/'.$service->images)}}"> </a>
 						</div>
 						<h2><a class="text-decoration-none" href="{{ route('users.service.details', encrypt($service->id)) }}">{{ $service->title }}</a></h2>
-						<div class="text"> {{ $service->contents }}</div>
-						<a href="{{ route('users.service.details', encrypt($service->id)) }}" class="read-more">Read more</a>
+						<div class="text"> {!! $service->contents !!}</div>
+						<a class="text-decoration-none" href="{{ route('users.service.details', encrypt($service->id)) }}" class="read-more">Read more</a>
 					</div>
 				</div>
 				@endforeach
@@ -232,8 +232,8 @@
 										<li><span class="icon fa fa-user"></span>{{ $blog->posted_by }}</li>
 									</ul>
 									<h3><a class="text-decoration-none" href="{{route('users.blog.details', encrypt($blog->id))}}">{{ $blog->title }}</a></h3>
-									<div class="text">{{ $blog->contents }}</div>
-									<a href="{{route('users.blog.details', encrypt($blog->id))}}" class="read-more">Read more</a>
+									<div class="text">{!! $blog->contents !!}</div>
+									<a class="text-decoration-none" href="{{route('users.blog.details', encrypt($blog->id))}}" class="read-more">Read more</a>
 								</div>
 							</div>
 						</div>
@@ -292,9 +292,10 @@
 						
 						<!--Track Form-->
 						<div class="track-form">
-                            <form method="post" action="https://nauthemes.net/html/carga/contact.html">
+                            <form method="post" action="{{ route('users.courier.index') }}">
+								@csrf
                                 <div class="form-group">
-                                    <input type="text" name="text" value="" placeholder="Tracking ID" required="">
+                                    <input type="text" name="trackID" value="" placeholder="Tracking ID" required="">
                                     <button type="submit" class="theme-btn"><span class="fa fa-search"></span></button>
                                 </div>
                             </form>
@@ -504,7 +505,7 @@
 					<div class="inner-column">
 						<h3>Are You A Sender?</h3>
 						<div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</div>
-						<a href="#" class="theme-btn btn-style-one">Check Packages</a>
+						<a  href="#" class="theme-btn btn-style-one text-decoration-none">Check Packages</a>
 					</div>
 				</div>
 				
@@ -513,7 +514,7 @@
 					<div class="inner-column">
 						<h3>Are You A Shipper?</h3>
 						<div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</div>
-						<a href="#" class="theme-btn btn-style-two">Contact us</a>
+						<a  href="{{ route('users.contact') }}" class="theme-btn btn-style-two text-decoration-none">Contact us</a>
 					</div>
 				</div>
 				

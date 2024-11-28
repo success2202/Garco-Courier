@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+
 use Carbon\Carbon;
 use App\Models\Tracking;
 use Illuminate\Http\Request;
@@ -15,6 +16,28 @@ use Illuminate\Support\Facades\Validator;
 class AdminShippingController extends Controller
 {
     //
+
+    public function Search(Request $req)
+    {
+        
+        $searchDetails = CourierDetails::where('sender_name','LIKE',  "%$req->SearchID%")->get();
+        
+        // $searchDetails = CourierDetails ::where('id', 'LIKE', "%{$req->SearchID}%")->first();
+       if(!$searchDetails)
+        {
+           
+            return back()->withErrors(['message' => 'Courier not found.']);
+           
+        }
+        return view('admin.courier.search')
+        ->with('searchDetails', $searchDetails)
+        ->with('breadcrumb', 'Shipments');
+        return back();
+       
+    
+    }
+
+
     public function Index()
     {
         return view('admin.courier.index')

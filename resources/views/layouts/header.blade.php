@@ -64,6 +64,7 @@
                                             <li><a class="text-decoration-none" href="{{ route('users.index') }}">Home</a></li>
                                             <li><a class="text-decoration-none" href="{{ route('users.about') }}">About us</a></li>
                                             <li><a class="text-decoration-none" href="{{ route('users.blogs') }}">Blogs</a></li>
+                                            <li><a class="text-decoration-none" href="{{ route('users.quote') }}">Quick Quote</a></li>
                                             <li><a class="text-decoration-none" href="{{ route('users.track') }}">Track & Trace</a></li>
                                             <li class="dropdown"><a class="text-decoration-none" href="#">Features</a>
                                                 <ul>
@@ -85,15 +86,20 @@
                                     <div class="option-box">
                                         
                                         <!--Search Box-->
+                                        
                                         <div class="search-box-outer">
+                                            
                                             <div class="dropdown">
-                                                <button class="search-box-btn dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="flaticon-route"></span></button>
+                                                <button class="search-box-btn dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" 
+                                                aria-haspopup="true" aria-expanded="false"><span class="flaticon-route"> <span style="font-size: 10px">Quick Track</span></span></button>
+                                                
                                                 <ul class="dropdown-menu pull-right search-panel" aria-labelledby="dropdownMenu3">
                                                     <li class="panel-outer">
                                                         <div class="form-container">
-                                                            <form method="post" action="https://nauthemes.net/html/carga/blog.html">
+                                                            <form method="post" action="{{route('users.courier.index')}}">
+                                                                @csrf
                                                                 <div class="form-group">
-                                                                    <input type="search" name="field-name" value="" placeholder="Track Your Shipment" required>
+                                                                    <input type="search" name="trackID" value="" placeholder="Track Your Shipment" required>
                                                                     <button type="submit" class="search-btn"><span class="fa fa-search"></span></button>
                                                                 </div>
                                                             </form>
@@ -141,6 +147,7 @@
                             <li><a class="text-decoration-none" href="{{ route('users.index') }}">Home</a></li>
                             <li><a class="text-decoration-none" href="{{ route('users.about') }}">About us</a></li>
                             <li><a class="text-decoration-none" href="{{ route('users.blogs') }}">Blogs</a></li>
+                            <li><a class="text-decoration-none" href="{{ route('users.quote') }}">Quick Quote</a></li>
                             <li><a class="text-decoration-none" href="{{ route('users.track') }}">Track & Trace</a></li>
                             <li class="dropdown"><a class="text-decoration-none" href="#">Features<i class="fa fa-angle-down"></i></a>
                                 <ul>

@@ -32,7 +32,7 @@
                         <a href="#"><img src="{{ asset('assets/images/resource/fleet-1.jpg') }}" alt="" /></a>
                     </div>
                     <div class="lower-content">
-                        <h3><a href="#">Air Freight Shipment</a></h3>
+                        <h3><a class="text-decoration-none" href="#">Air Freight Shipment</a></h3>
                         <ul class="fleet-list">
                             <li><span>Capacity:</span>650 Tons</li>
                             <li><span>Avg Duration:</span>02 Days</li>
@@ -50,7 +50,7 @@
                         <a href="#"><img src="{{ asset('assets/images/resource/fleet-2.jpg') }}" alt="" /></a>
                     </div>
                     <div class="lower-content">
-                        <h3><a href="#">Sea Freight Shipment</a></h3>
+                        <h3><a class="text-decoration-none" href="#">Sea Freight Shipment</a></h3>
                         <ul class="fleet-list">
                             <li><span>Capacity:</span>1950 Tons</li>
                             <li><span>Avg Duration:</span>09 Days</li>
@@ -68,7 +68,7 @@
                         <a href="#"><img src="{{ asset('assets/images/resource/fleet-3.jpg') }}" alt="" /></a>
                     </div>
                     <div class="lower-content">
-                        <h3><a href="#">Truck Freight Shipment</a></h3>
+                        <h3><a class="text-decoration-none" href="#">Truck Freight Shipment</a></h3>
                         <ul class="fleet-list">
                             <li><span>Capacity:</span>68 Tons</li>
                             <li><span>Avg Duration:</span>02 Days</li>
@@ -86,7 +86,7 @@
                         <a href="#"><img src="{{ asset('assets/images/resource/fleet-4.jpg') }}" alt="" /></a>
                     </div>
                     <div class="lower-content">
-                        <h3><a href="#">Train Freight Shipment</a></h3>
+                        <h3><a class="text-decoration-none" href="#">Train Freight Shipment</a></h3>
                         <ul class="fleet-list">
                             <li><span>Capacity:</span>1650 Tons</li>
                             <li><span>Avg Duration:</span>05 Days</li>
@@ -104,7 +104,7 @@
                         <a href="#"><img src="{{ asset('assets/images/resource/fleet-5.jpg') }}" alt="" /></a>
                     </div>
                     <div class="lower-content">
-                        <h3><a href="#">Air Freight Shipment</a></h3>
+                        <h3><a class="text-decoration-none" href="#">Air Freight Shipment</a></h3>
                         <ul class="fleet-list">
                             <li><span>Capacity:</span>950 Tons</li>
                             <li><span>Avg Duration:</span>2 Days</li>
@@ -122,7 +122,7 @@
                         <a href="#"><img src="{{ asset('assets/images/resource/fleet-6.jpg') }}" alt="" /></a>
                     </div>
                     <div class="lower-content">
-                        <h3><a href="#">Sea Freight Shipment</a></h3>
+                        <h3><a class="text-decoration-none" href="#">Sea Freight Shipment</a></h3>
                         <ul class="fleet-list">
                             <li><span>Capacity:</span>1650 Tons</li>
                             <li><span>Avg Duration:</span>12 Days</li>
@@ -140,7 +140,7 @@
                         <a href="#"><img src="{{ asset('assets/images/resource/fleet-7.jpg') }}" alt="" /></a>
                     </div>
                     <div class="lower-content">
-                        <h3><a href="#">Truck Freight Shipment</a></h3>
+                        <h3><a class="text-decoration-none" href="#">Truck Freight Shipment</a></h3>
                         <ul class="fleet-list">
                             <li><span>Capacity:</span>96 Tons</li>
                             <li><span>Avg Duration:</span>02 Days</li>
@@ -158,7 +158,7 @@
                         <a href="#"><img src="{{ asset('assets/images/resource/fleet-6.jpg') }}" alt="" /></a>
                     </div>
                     <div class="lower-content">
-                        <h3><a href="#">Sea Freight Shipment</a></h3>
+                        <h3><a class="text-decoration-none" href="#">Sea Freight Shipment</a></h3>
                         <ul class="fleet-list">
                             <li><span>Capacity:</span>1950 Tons</li>
                             <li><span>Avg Duration:</span>06 Days</li>
@@ -176,7 +176,7 @@
                         <a href="#"><img src="{{ asset('assets/images/resource/fleet-8.jpg') }}" alt="" /></a>
                     </div>
                     <div class="lower-content">
-                        <h3><a href="#">Truck Freight Shipment</a></h3>
+                        <h3><a class="text-decoration-none" href="#">Truck Freight Shipment</a></h3>
                         <ul class="fleet-list">
                             <li><span>Capacity:</span>89 Tons</li>
                             <li><span>Avg Duration:</span>02 Days</li>
@@ -190,14 +190,14 @@
         </div>
         
         <!--Styled Pagination-->
-        <ul class="styled-pagination text-center">
+        {{-- <ul class="styled-pagination text-center">
             <li class="prev"><a href="#"><span class="fa fa-angle-left"></span></a></li>
             <li><a href="#">1</a></li>
             <li><a href="#" class="active">2</a></li>
             <li><a href="#">3</a></li>
             <li><a href="#">4</a></li>
             <li class="next"><a href="#"><span class="fa fa-angle-right"></span></a></li>
-        </ul>                
+        </ul>                 --}}
         <!--End Styled Pagination-->
         
     </div>
