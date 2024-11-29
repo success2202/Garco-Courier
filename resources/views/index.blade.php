@@ -21,8 +21,8 @@
 						
 						<!-- Banner Form -->
 						<div class="banner-form">
-							<form method="post" action="https://nauthemes.net/html/carga/index.html">
-								
+							<form method="post" action="{{ route('users.courier.tracks') }}">
+								@csrf
 								<div class="form-group">
 									<label>Select Shipping Method</label>
 									<select class="custom-select-box">
