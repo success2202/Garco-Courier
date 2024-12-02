@@ -1,4 +1,5 @@
 @extends('layouts.base')
+
 @section('content')
 	<!--Banner Section-->
     <section class="banner-section blue" style="background-image:url({{ asset('assets/images/background/1.jpg') }})">
@@ -21,7 +22,7 @@
 						
 						<!-- Banner Form -->
 						<div class="banner-form">
-							<form method="post" action="{{ route('users.courier.tracks') }}">
+							<form method="post" action="{{ route('users.quote') }}">
 								@csrf
 								<div class="form-group">
 									<label>Select Shipping Method</label>
@@ -73,7 +74,7 @@
 	<section class="about-section blue">
 		<div class="auto-container">
 			<div class="sec-title blue centered">
-				<h3>About <span>The Garco</span></h3>
+				<h3>About <span>The GarcoXpress</span></h3>
 				<div class="separater"></div>
 				<div class="text">With over 50 years experience in the Cargo and Transport Services</div>
 			</div>
@@ -522,4 +523,6 @@
 		</div>
 	</section>
 	<!-- End Fullwidth Section -->
+
+	
 @endsection

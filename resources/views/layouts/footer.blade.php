@@ -1,3 +1,4 @@
+
 <footer class="main-footer blue" style="background-image:url({{ asset('assets/images/background/7.png') }})">
     <div class="auto-container">
         <!--Widgets Section-->
@@ -122,7 +123,7 @@
             </div>
         </div>
     </div>
-    
+        
     <!-- Footer Bottom -->
     <div class="footer-bottom">
         <div class="copyright">{{ $settings->site_name }}&copy; 2024 / ALL RIGHTS RESERVED</div>

@@ -29,7 +29,7 @@
 				<div class="content-column col-lg-6 col-md-12 col-sm-12">
 					<div class="inner-column wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
 						<div class="sec-title-two sec-title">
-							<h2>Welcome <span>To Garco</span></h2>
+							<h2>Welcome <span>To Darco</span></h2>
 							<div class="separater"></div>
 						</div>
 						<ul class="list-style-one">

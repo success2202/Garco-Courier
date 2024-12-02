@@ -40,7 +40,7 @@
         <div class="auto-container">
             <div class="clearfix">
                 <div class="pull-left logo-box">
-                    <div class="logo"><a href="{{ route('users.index') }}"><img src="{{ asset('assets/images/logo.png') }}" alt="" title=""></a></div>
+                    <div class="logo"><a href="{{ route('users.index') }}"><img style="width: 200px; height: 60px" src="{{ asset('assets/images/cck.png') }}" alt="" title=""></a></div>
                 </div>
                 <div class="pull-right upper-right">
                     
@@ -129,7 +129,7 @@
         <div class="auto-container clearfix">
             <!--Logo-->
             <div class="logo pull-left">
-                <a href="index.html" class="img-responsive"><img src="images/logo-small.png" alt="" title=""></a>
+                <a href="{{ route('users.index') }}" class="img-responsive"><img style="width: 200px; height: 60px" src="{{ asset('assets/images/cck.png') }}" alt="" title=""></a>
             </div>
             
             <!--Right Col-->

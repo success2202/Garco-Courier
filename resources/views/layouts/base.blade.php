@@ -5,6 +5,7 @@
 <head>
 <meta charset="utf-8">
 <title>Carga HTML Template | Home Page</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <!-- Stylesheets -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -25,6 +26,9 @@ href="{{asset('assets/plugins/bootstrap-select-1.10.0/dist/css/bootstrap-select.
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 
 
+	
+  
+  
 <!-- Responsive -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -32,6 +36,33 @@ href="{{asset('assets/plugins/bootstrap-select-1.10.0/dist/css/bootstrap-select.
 
 <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
 <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+
+<style>
+	.whatsapp-button {
+	  position: fixed;
+	  bottom: 15px;
+	  right: 65px;
+	  background-color: #25D366; /* WhatsApp Green */
+	  color: white;
+	  padding: 10px 15px;
+	  border-radius: 50px;
+	  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	  font-size: 18px;
+	  display: flex;
+	  align-items: center;
+	  text-decoration: none;
+	  z-index: 1000;
+	}
+  
+	.whatsapp-button i {
+	  margin-right: 10px;
+	  font-size: 24px;
+	}
+  
+	.whatsapp-button:hover {
+	  background-color: #128C7E; /* Darker WhatsApp Green */
+	}
+  </style>
 
 @stack('styles')
 </head>
@@ -52,7 +83,9 @@ href="{{asset('assets/plugins/bootstrap-select-1.10.0/dist/css/bootstrap-select.
 	
 	<!--Main Footer-->
     @include('layouts.footer')
-	
+	<a href="https://wa.me/15551234567" target="_blank" class="whatsapp-button text-decoration-none">
+        <i class="fab fa-whatsapp"></i> Chat with us on WhatsApp
+      </a>
 </div>
 <!--End pagewrapper-->
 
