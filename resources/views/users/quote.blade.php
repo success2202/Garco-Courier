@@ -187,9 +187,9 @@
                     
                     <!--Track Form-->
                     <div class="track-form">
-                        <form method="post" action="https://nauthemes.net/html/carga/contact.html">
+                        <form method="post" action="{{ route('users.courier.index') }}">
                             <div class="form-group">
-                                <input type="email" name="email" value="" placeholder="Track ID" required="">
+                                <input type="text" name="trackID" value="" placeholder="Track ID" required="">
                                 <button type="submit" class="theme-btn"><span class="fa fa-search"></span></button>
                             </div>
                         </form>
