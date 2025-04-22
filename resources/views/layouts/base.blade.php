@@ -26,6 +26,7 @@ href="{{asset('assets/plugins/bootstrap-select-1.10.0/dist/css/bootstrap-select.
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 
 
+
 	
   
   
@@ -78,13 +79,14 @@ href="{{asset('assets/plugins/bootstrap-select-1.10.0/dist/css/bootstrap-select.
    @include('layouts.header')
     <!--End Main Header -->
 	
-	<!--Banner Section-->
+	<!--Banner Section--> 
+
   @yield('content')
 	
 	<!--Main Footer-->
     @include('layouts.footer')
 	<a href="https://wa.me/15551234567" target="_blank" class="whatsapp-button text-decoration-none">
-        <i class="fab fa-whatsapp"></i> Chat with us on WhatsApp
+        <i class="fab fa-whatsapp"></i> Chat with us
       </a>
 </div>
 <!--End pagewrapper-->

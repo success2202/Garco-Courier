@@ -118,11 +118,10 @@ class AdminShippingController extends Controller
         Session::flash('message', 'Something  went wrong');
         return back();
     }
-
-   
+    
     }
 
-    public function ShipmentEdit($id)
+    public function ShipmentEdit($id)  
     {
         return view('admin.courier.edit')
         ->with('shipment', CourierDetails::where('id', decrypt($id))->first())

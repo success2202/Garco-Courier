@@ -28,6 +28,7 @@
                             <li><a href="#">New York Office</a></li>
                             <li><a href="#">Berlin Office</a></li>
                             <li><a href="#">Dubai Office</a></li>
+                            <li><a href="#">London Office</a></li>
                         </ul>
                     </div>
                 </div>

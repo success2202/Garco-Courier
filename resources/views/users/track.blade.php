@@ -339,16 +339,16 @@
                             <table class="table table-striped table-hover table-sm">
                             <thead>
                                 <tr>
-                                <th>Product Name</th>
+                                <th>Name</th>
                                 <th>Ref No.</th>
-                                <th>Current Status</th>
+                                <th>Status</th>
                                 <th>Origin</th>
                                 <th>Destination</th>
-                                <th>Departure Date</th>
-                                <th>Arrival Date</th>
+                                <th>Departure</th>
+                                <th>Arrival</th>
                                 <th>Package</th>
                                 <th>Weight</th>
-                                <th>Delivery Charges</th>
+                                <th>Charges</th>
                                 <th>Payment</th>
                                 <th>Frieght</th>
                             </tr>
