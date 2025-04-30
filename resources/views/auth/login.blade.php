@@ -29,6 +29,7 @@
         .sett{
             align-items: left !important;
         }
+
     </style>
   </head>
   <body>
@@ -58,9 +59,16 @@
                 <span>Password</span>
                 <a href="#" class="tx-13">Forgot password?</a>
               </label>
-              <input type="password" name="password" class="form-control" placeholder="Enter your password"
+              <input type="password" name="password" id="password" class="form-control" placeholder="Enter your password"
                autocomplete="correct password" required>
+               <span class="toggle-password" onclick="togglePassword()">
+                👁️
+              </span>
               @error('password') <span class="text-danger mt-3"> {{ $message }}</span>  @enderror
+              
+      
+              
+            
             </div>
 
             <div class="form-group d-flex mg-b-0">
@@ -103,6 +111,20 @@
       })
     </script>
     <script src="{{ asset('backend/js/svg-inline.js') }}"></script>
+
+    <script>
+      function togglePassword() {
+        const passwordField = document.getElementById("password");
+        const icon = document.querySelector(".toggle-password");
+        if (passwordField.type === "password") {
+          passwordField.type = "text";
+          icon.textContent = "🙈"; // Change icon when shown
+        } else {
+          passwordField.type = "password";
+          icon.textContent = "👁️"; // Change icon when hidden
+        }
+      }
+    </script>
   </body>
 
 <!-- Mirrored from themepixels.me/demo/cassie/pages/page-signin.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 21 Oct 2024 23:36:37 GMT -->
